@@ -16,32 +16,43 @@ class ViewController: UIViewController {
     var secondNumber: Float = 0
     var result: Float = 0
     var operation = ""
+    var function = ""
+    var numArray: [Float] = []
     
-    @IBAction func numberTapped(sender: AnyObject) {
+    @IBAction func numberTapped(sender: UIButton) {
         let number = sender.currentTitle
         if isTypingNumber == true {
-            calculatorDisplay.text = calculatorDisplay.text! + number!!
+            calculatorDisplay.text = calculatorDisplay.text! + number!
         } else {
             calculatorDisplay.text = number
         }
         isTypingNumber = true
     }
     
-    @IBAction func operationTapped(sender: AnyObject) {
+    @IBAction func operationTapped(sender: UIButton) {
         isTypingNumber = false
         firstNumber = Float(calculatorDisplay.text!)!
-        operation = sender.currentTitle!!
+        operation = sender.currentTitle!
     }
     
-    @IBAction func dotTapped(sender: AnyObject) {
+    @IBAction func dotTapped(sender: UIButton) {
         let dot = sender.currentTitle!
-        calculatorDisplay.text = calculatorDisplay.text! + dot!
+        calculatorDisplay.text = calculatorDisplay.text! + dot
         
     }
     
-    @IBAction func equalsTapped(sender: AnyObject) {
+    @IBAction func equalsTapped(sender: UIButton) {
         secondNumber = Float(calculatorDisplay.text!)!
-        if operation == "+" {
+        if function == "Avg" {
+            var sum: Float = 0.0;
+            for numbers in numArray {
+                sum = sum + numbers;
+            }
+            sum = sum + secondNumber;
+            result = sum / Float(numArray.count + 1);
+        } else if function == "Count" {
+            result = Float(numArray.count)
+        } else if operation == "+" {
             result = firstNumber + secondNumber
         } else if operation == "-" {
             result = firstNumber - secondNumber
@@ -53,21 +64,34 @@ class ViewController: UIViewController {
         calculatorDisplay.text = "\(result)"
     }
     
-    @IBAction func clearTapped(sender: AnyObject) {
+    @IBAction func clearTapped(sender: UIButton) {
         isTypingNumber = false
         firstNumber = 0
         secondNumber = 0
         result = 0
+        function = ""
+        numArray = []
         calculatorDisplay.text = "\(result)"
     }
     
-    @IBAction func functionTapped(sender: AnyObject) {
+    @IBAction func factTapped(sender: UIButton) {
         isTypingNumber = false;
         firstNumber = Float(calculatorDisplay.text!)!
-        operation = sender.currentTitle!!
-        if operation == "!" {
+        var sum = 1;
+        if firstNumber > 0 {
+            for (var index = 1; index <= Int(round(firstNumber)); index++) {
+                sum *= index;
+            }
         }
+        calculatorDisplay.text = "\(sum)";
     }
+    
+    @IBAction func AvgTapped(sender: UIButton) {
+        function = sender.currentTitle!
+        isTypingNumber = false
+        numArray.append(firstNumber)
+    }
+    
     
 
     override func viewDidLoad() {
