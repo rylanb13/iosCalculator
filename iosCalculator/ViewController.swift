@@ -67,6 +67,8 @@ class ViewController: UIViewController {
             result = firstNumber - secondNumber
         } else if operation == "X" {
             result = firstNumber * secondNumber
+        } else if operation == "%" {
+            result = firstNumber % secondNumber
         } else {
             result = firstNumber / secondNumber
         }
