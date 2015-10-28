@@ -176,16 +176,6 @@
                                     <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xp1-0z-ikd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsG-Jg-JVl">
-                                <rect key="frame" x="190" y="168" width="95" height="100"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Avg"/>
-                                <connections>
-                                    <action selector="AvgTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pxp-Cv-I5M"/>
-                                    <action selector="funcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVb-c4-lBA"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu5-wl-H6b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,14 +183,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nez-if-8vW">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtN-lB-Uax">
                                 <rect key="frame" x="0.0" y="168" width="95" height="100"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Count"/>
                                 <connections>
-                                    <action selector="AvgTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T3y-O6-hLt"/>
-                                    <action selector="funcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10E-7W-9cl"/>
+                                    <action selector="avgTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1vO-T0-n57"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmc-ty-yfw">
+                                <rect key="frame" x="190" y="168" width="95" height="100"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Avg"/>
+                                <connections>
+                                    <action selector="avgTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GLS-h3-kMb"/>
                                 </connections>
                             </button>
                         </subviews>
