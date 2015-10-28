@@ -27,11 +27,13 @@ class ViewController: UIViewController {
             calculatorDisplay.text = number
         }
         isTypingNumber = true
+        
     }
     
     @IBAction func avgTapped(sender: UIButton) {
         isTypingNumber = false;
         function = sender.currentTitle!
+        firstNumber = Float(calculatorDisplay.text!)!
         numArray += [firstNumber]
     }
     
@@ -56,7 +58,7 @@ class ViewController: UIViewController {
                 sum = sum + numbers;
             }
             sum = sum + secondNumber;
-            result = sum / Float(numArray.count);
+            result = sum / Float(numArray.count + 1);
         } else if function == "Count" {
             result = Float(numArray.count + 1)
         } else if operation == "+" {
